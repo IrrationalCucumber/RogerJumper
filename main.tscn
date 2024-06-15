@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfu35upbqsb1"]
+
+[ext_resource type="PackedScene" uid="uid://ceq480k1nw4v3" path="res://tank.tscn" id="1_xtr6h"]
+[ext_resource type="PackedScene" uid="uid://bvy1jgabutih0" path="res://env.tscn" id="2_w2aul"]
+
+[node name="Main" type="Node"]
+
+[node name="tank" parent="." instance=ExtResource("1_xtr6h")]
+position = Vector2(96, 507)
+disable_mode = 1
+collision_layer = 3
+
+[node name="env" parent="." instance=ExtResource("2_w2aul")]
+position = Vector2(573, 592)

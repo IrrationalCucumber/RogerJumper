@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://ceq480k1nw4v3"]
+
+[ext_resource type="Texture2D" uid="uid://g77pjtdk1xly" path="res://art/Tank_idle1.png" id="1_jqdcf"]
+[ext_resource type="Script" path="res://tank.gd" id="1_l8cu7"]
+[ext_resource type="Texture2D" uid="uid://dhsj2pvcns7tf" path="res://art/Tank_idle2.png" id="2_7svg1"]
+[ext_resource type="Texture2D" uid="uid://bxs5c0giqwuaw" path="res://art/Tank_running1.png" id="3_1vm44"]
+[ext_resource type="Texture2D" uid="uid://dx2j8p28kl8y6" path="res://art/Tank_running2.png" id="4_uxyud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjvh3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jqdcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7svg1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1vm44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uxyud")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guf3x"]
+radius = 48.0416
+
+[node name="tank" type="CharacterBody2D"]
+position = Vector2(363, 92)
+script = ExtResource("1_l8cu7")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tjvh3")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_guf3x")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 1
+limit_right = 3570
+limit_bottom = 640
+limit_smoothed = true
+position_smoothing_enabled = true
