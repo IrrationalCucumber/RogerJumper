@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://fnviijry4m55"]
+
+[ext_resource type="Texture2D" uid="uid://c667l8r2wbvau" path="res://art/flag_1.png" id="1_g4ade"]
+[ext_resource type="Texture2D" uid="uid://ceao28bsqxpe1" path="res://art/flag_2.png" id="2_fcjs7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjgrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g4ade")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fcjs7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dttkv"]
+size = Vector2(56, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6kl3"]
+size = Vector2(6, 38)
+
+[node name="flag" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pjgrp")
+animation = &"idle"
+frame_progress = 0.438887
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -15)
+shape = SubResource("RectangleShape2D_dttkv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-20, 23)
+shape = SubResource("RectangleShape2D_d6kl3")
