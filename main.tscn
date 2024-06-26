@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfu35upbqsb1"]
+[gd_scene load_steps=5 format=3 uid="uid://dfu35upbqsb1"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_u4w85"]
 [ext_resource type="PackedScene" uid="uid://ceq480k1nw4v3" path="res://tank.tscn" id="1_xtr6h"]
 [ext_resource type="PackedScene" uid="uid://bvy1jgabutih0" path="res://env.tscn" id="2_w2aul"]
+[ext_resource type="PackedScene" uid="uid://blli3fr0jq027" path="res://spike.tscn" id="3_bvp8m"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_u4w85")
+mob_scene = ExtResource("3_bvp8m")
 
 [node name="tank" parent="." instance=ExtResource("1_xtr6h")]
 position = Vector2(96, 507)
@@ -12,3 +16,11 @@ collision_layer = 3
 
 [node name="env" parent="." instance=ExtResource("2_w2aul")]
 position = Vector2(573, 592)
+
+[node name="spike" parent="." instance=ExtResource("3_bvp8m")]
+position = Vector2(1976, -283)
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(59, 390)
+
+[connection signal="hit" from="tank" to="." method="_on_tank_hit"]

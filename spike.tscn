@@ -3,19 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://cwqivqe3eqcer" path="res://art/trap_spike.png" id="1_po61f"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_o0bfu"]
-a = Vector2(0, -15)
+a = Vector2(9, -43)
 b = Vector2(-10, 17)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_dk1nx"]
-a = Vector2(0, -15)
-b = Vector2(10, 17)
+a = Vector2(-1, -29)
+b = Vector2(19, 29)
 
 [node name="spike" type="RigidBody2D"]
+mass = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_po61f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10, 14)
 shape = SubResource("SegmentShape2D_o0bfu")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
