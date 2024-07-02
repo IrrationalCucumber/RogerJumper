@@ -10,7 +10,7 @@ script = ExtResource("1_u4w85")
 mob_scene = ExtResource("3_bvp8m")
 
 [node name="tank" parent="." instance=ExtResource("1_xtr6h")]
-position = Vector2(96, 507)
+position = Vector2(117, 283)
 disable_mode = 1
 collision_layer = 3
 
